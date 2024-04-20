@@ -25,10 +25,10 @@ const RootLayout = () => {
           </li>
           <li>
             <NavLink
-              to={"post"}
+              to={"posts"}
               className={({ isActive }) => (isActive ? styles.activeNav : null)}
             >
-              Post
+              Posts
             </NavLink>
           </li>
           <li>
