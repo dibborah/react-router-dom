@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-// post component
-
 const Post = ({ id, title }) => {
   return (
     <div style={{ padding: "1rem", margin: "1rem", border: "2px solid #000" }}>
