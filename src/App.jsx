@@ -5,9 +5,18 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { Home, About, ErrorPage, Posts, Contact, PostDetails, Login } from "./pages";
+import {
+  Home,
+  About,
+  ErrorPage,
+  Posts,
+  Contact,
+  PostDetails,
+  Login,
+} from "./pages";
 import RootLayout from "./layout/RootLayout";
 import RequireAuth from "./components/RequireAuth";
+import AuthProvider from "./contexts/AuthProvider";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -32,7 +41,11 @@ const App = () => {
       </Route>
     )
   );
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 };
 
 export default App;
