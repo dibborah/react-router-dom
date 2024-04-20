@@ -1,4 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
+import styles from "./RootLayout.module.css";
 
 const RootLayout = () => {
   return (
@@ -6,10 +7,38 @@ const RootLayout = () => {
       <h1>Nav</h1>
       <nav>
         <ul>
-          <li><Link to={"/"}>Home</Link></li>
-          <li><Link to={"about"}>About</Link></li>
-          <li><Link to={"post"}>Post</Link></li>
-          <li><Link to={"contact"}>Contact</Link></li>
+          <li>
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => (isActive ? styles.activeNav : null)}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"about"}
+              className={({ isActive }) => (isActive ? styles.activeNav : null)}
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"post"}
+              className={({ isActive }) => (isActive ? styles.activeNav : null)}
+            >
+              Post
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"contact"}
+              className={({ isActive }) => (isActive ? styles.activeNav : null)}
+            >
+              Contact
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <hr />
