@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 const RequireAuth = ({ children }) => {
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const location = useLocation();
+  console.log('RequireAuth', location);
 
   if (isLoggedIn) {
     return children;

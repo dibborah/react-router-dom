@@ -33,7 +33,14 @@ const App = () => {
             </RequireAuth>
           }
         />
-        <Route path="posts/:id" element={<PostDetails />} />
+        <Route
+          path="posts/:id"
+          element={
+            <RequireAuth>
+              <PostDetails />
+            </RequireAuth>
+          }
+        />
 
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />

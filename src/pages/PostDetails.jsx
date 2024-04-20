@@ -8,7 +8,6 @@ const PostDetails = () => {
   const fetchPost = async () => {
     const response = await fetch(`${url}/${id}`);
     const data = await response.json();
-    console.log(data);
     setPost(data);
   };
 
