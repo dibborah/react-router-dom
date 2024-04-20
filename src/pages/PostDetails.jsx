@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 const PostDetails = () => {
   const [post, setPost] = useState(null);
-
   const { id } = useParams();
   const url = "https://jsonplaceholder.typicode.com/posts";
   const fetchPost = async () => {
@@ -12,10 +11,12 @@ const PostDetails = () => {
     console.log(data);
     setPost(data);
   };
+
   useEffect(() => {
     // fetching single post
     fetchPost();
   }, []);
+
   return (
     <div>
       {post && (

@@ -5,8 +5,9 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { Home, About, ErrorPage, Posts, Contact, PostDetails } from "./pages";
+import { Home, About, ErrorPage, Posts, Contact, PostDetails, Login } from "./pages";
 import RootLayout from "./layout/RootLayout";
+import RequireAuth from "./components/RequireAuth";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -15,10 +16,18 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
 
-        <Route path="posts" element={<Posts />} />
+        <Route
+          path="posts"
+          element={
+            <RequireAuth>
+              <Posts />
+            </RequireAuth>
+          }
+        />
         <Route path="posts/:id" element={<PostDetails />} />
 
         <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<ErrorPage />} />
       </Route>
     )
