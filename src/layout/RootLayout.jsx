@@ -42,7 +42,6 @@ const RootLayout = () => {
         </ul>
       </nav>
       <hr />
-      <h1>Main Content</h1>
       <Outlet />
     </div>
   );
