@@ -13,6 +13,7 @@ const PostDetails = () => {
     setPost(data);
   };
   useEffect(() => {
+    // fetching single post
     fetchPost();
   }, []);
   return (
